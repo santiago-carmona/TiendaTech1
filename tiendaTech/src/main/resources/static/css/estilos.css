@@ -1,0 +1,106 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 23 sept 2026, 6:11:42 p. m.
+    Author     : santi
+*/
+
+body {
+    background-color: #eaf2ff;
+    font-family: serif;
+}
+
+header {
+    position: fixed;
+    background-color: #1e3a8a;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    padding: 10px;
+}
+
+aside {
+    position: fixed;  
+    background-color: #eaf2ff;
+    top: 110px;
+    left: 0;
+    width: 20%;
+    bottom: 20px;
+    padding: 10px;
+}
+section {
+    position: fixed;  
+    background-color: #ffffff;
+    top: 110px;
+    left: 20%;
+    width: 80%;
+    bottom: 40px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+footer {
+    position: fixed;  
+    background-color: #0f172a;
+    color: white;    
+    left: 0;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    text-align: center;
+    line-height: 40px;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   margin: 0 10px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    line-height: 90px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin-right: 40px;
+}
+
+.nav-menu-item {
+    font-size: 22px;
+    margin: 0 10px;
+    line-height: 90px;
+}
+
+.menu-item {
+    padding: 5px;
+    background-color: #2563eb;
+    border-radius: 10px;
+}
+
+.menu-item:hover {
+    background-color: #1d4ed8;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    line-height: 90px;
+    font-size: 30px;
+}
+
+aside h1 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
