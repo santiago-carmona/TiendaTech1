@@ -17,5 +17,5 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer>{
     
     //Se crea una consulta derivada para recuperar solo las productos activas
     public List<Producto> findByActivoTrue();
-    
+    List<Producto> findByCategoriaIdCategoriaAndActivoTrueOrderByDescripcionAsc(Integer idCategoria);
 }

@@ -23,8 +23,9 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 @RequiredArgsConstructor
 public class ProductoService {
-     // El repositorio es final para asegurar la inmutabilidad
-    private final ProductoRepository productoRepository;    
+
+    // El repositorio es final para asegurar la inmutabilidad
+    private final ProductoRepository productoRepository;
     private final FirebaseStorageService firebaseStorageService;
 
     @Transactional(readOnly = true)
@@ -34,8 +35,8 @@ public class ProductoService {
         }
         return productoRepository.findAll();
     }
-    
-     @Transactional(readOnly = true)
+
+    @Transactional(readOnly = true)
     public Optional<Producto> getProducto(Integer idProducto) {
         return productoRepository.findById(idProducto);
     }
@@ -51,7 +52,7 @@ public class ProductoService {
                 producto.setRutaImagen(rutaImagen);
                 productoRepository.save(producto);
             } catch (IOException e) {
-                log.warn("No fue posible almacenar la imagen de la producto {}",producto.getIdProducto(),e);
+                log.warn("No fue posible almacenar la imagen de la producto {}", producto.getIdProducto(), e);
             }
         }
     }
@@ -70,5 +71,10 @@ public class ProductoService {
             // Lanza una nueva excepción para encapsular el problema de integridad de datos
             throw new IllegalStateException("No se puede eliminar la producto. Tiene datos asociados.", e);
         }
+    }
+
+    @Transactional(readOnly = true)
+    public List<Producto> getProductosPorCategoria(Integer idCategoria) {
+        return productoRepository.findByCategoriaIdCategoriaAndActivoTrueOrderByDescripcionAsc(idCategoria);
     }
 }
