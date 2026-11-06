@@ -63,4 +63,11 @@ public class ConsultaController {
         return "/consultas/listado";
     }
 
+      @PostMapping("/buscarPorDescripcion")
+    public String buscarPorDescripcion(@RequestParam() String texto, Model model) {
+        var productos = productoService.buscarPorDescripcion(texto);
+        model.addAttribute("productos", productos);
+        model.addAttribute("texto", texto);
+        return "/consultas/listado";
+    }
 }
